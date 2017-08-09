@@ -11,9 +11,9 @@ export class NavigationBarComponent implements OnInit {
     text: "Google",
     title: "google"
   }, {
-    href: "www.facebook.com",
-    text: "Facebook",
-    title: "facebook"
+    href: "www.rediffmail.com",
+    text: "Rediffmail",
+    title: "rediffmail"
   }]
   constructor() { }
 
