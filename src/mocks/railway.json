@@ -1,0 +1,190 @@
+{
+    "current_station": {
+        "name": "LUCKNOW",
+        "lng": 80.9346001,
+        "code": "LKO",
+        "lat": 26.8381
+    },
+    "start_date": "15 Feb 2018",
+    "debit": 2,
+    "route": [
+        {
+            "actdep": "23:30",
+            "scharr_date": "15 Feb 2018",
+            "day": 0,
+            "distance": 0,
+            "schdep": "23:30",
+            "scharr": "Source",
+            "has_arrived": false,
+            "status": "0 mins late",
+            "actarr_date": "15 Feb 2018",
+            "station": {
+                "name": "LUCKNOW",
+                "lng": 80.9346001,
+                "code": "LKO",
+                "lat": 26.8381
+            },
+            "latemin": 0,
+            "has_departed": false,
+            "actarr": "00:00"
+        },
+        {
+            "actdep": "02:45",
+            "scharr_date": "16 Feb 2018",
+            "day": 1,
+            "distance": 235,
+            "schdep": "02:45",
+            "scharr": "02:42",
+            "has_arrived": false,
+            "status": "0 mins late",
+            "actarr_date": "16 Feb 2018",
+            "station": {
+                "name": "BAREILLY",
+                "lng": 79.4096542,
+                "code": "BE",
+                "lat": 28.3523609
+            },
+            "latemin": 0,
+            "has_departed": false,
+            "actarr": "02:42"
+        },
+        {
+            "actdep": "04:28",
+            "scharr_date": "16 Feb 2018",
+            "day": 1,
+            "distance": 325,
+            "schdep": "04:28",
+            "scharr": "04:20",
+            "has_arrived": false,
+            "status": "0 mins late",
+            "actarr_date": "16 Feb 2018",
+            "station": {
+                "name": "MORADABAD",
+                "lng": 78.7777028569385,
+                "code": "MB",
+                "lat": 28.8170328
+            },
+            "latemin": 0,
+            "has_departed": false,
+            "actarr": "04:20"
+        },
+        {
+            "actdep": "06:40",
+            "scharr_date": "16 Feb 2018",
+            "day": 1,
+            "distance": 466,
+            "schdep": "06:40",
+            "scharr": "06:38",
+            "has_arrived": false,
+            "status": "0 mins late",
+            "actarr_date": "16 Feb 2018",
+            "station": {
+                "name": "GHAZIABAD",
+                "lng": 77.4120356,
+                "code": "GZB",
+                "lat": 28.6711527
+            },
+            "latemin": 0,
+            "has_departed": false,
+            "actarr": "06:38"
+        },
+        {
+            "actdep": "00:00",
+            "scharr_date": "16 Feb 2018",
+            "day": 1,
+            "distance": 492,
+            "schdep": "Destination",
+            "scharr": "07:25",
+            "has_arrived": false,
+            "status": "0 mins late",
+            "actarr_date": "16 Feb 2018",
+            "station": {
+                "name": "NEW DELHI",
+                "lng": 77.2022662,
+                "code": "NDLS",
+                "lat": 28.6141793
+            },
+            "latemin": 0,
+            "has_departed": false,
+            "actarr": "07:25"
+        }
+    ],
+    "position": "Train is currently at Source and late by 0 minutes.",
+    "response_code": 200,
+    "train": {
+        "number": "12429",
+        "name": "LKO-NDLS AC SUPFAST EXP",
+        "classes": [
+            {
+                "name": "SLEEPER CLASS",
+                "code": "SL",
+                "available": "N"
+            },
+            {
+                "name": "THIRD AC",
+                "code": "3A",
+                "available": "Y"
+            },
+            {
+                "name": "3rd AC ECONOMY",
+                "code": "3E",
+                "available": "N"
+            },
+            {
+                "name": "SECOND AC",
+                "code": "2A",
+                "available": "Y"
+            },
+            {
+                "name": "AC CHAIR CAR",
+                "code": "CC",
+                "available": "N"
+            },
+            {
+                "name": "FIRST CLASS",
+                "code": "FC",
+                "available": "N"
+            },
+            {
+                "name": "FIRST AC",
+                "code": "1A",
+                "available": "Y"
+            },
+            {
+                "name": "SECOND SEATING",
+                "code": "2S",
+                "available": "N"
+            }
+        ],
+        "days": [
+            {
+                "runs": "Y",
+                "code": "MON"
+            },
+            {
+                "runs": "Y",
+                "code": "TUE"
+            },
+            {
+                "runs": "Y",
+                "code": "WED"
+            },
+            {
+                "runs": "Y",
+                "code": "THU"
+            },
+            {
+                "runs": "Y",
+                "code": "FRI"
+            },
+            {
+                "runs": "Y",
+                "code": "SAT"
+            },
+            {
+                "runs": "Y",
+                "code": "SUN"
+            }
+        ]
+    }
+}

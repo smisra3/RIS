@@ -1,0 +1,16 @@
+{
+    "tabs": [
+        {
+            "href": "www.google.co.in",
+            "text": "Google",
+            "title": "google",
+            "target": ""
+        },
+        {
+            "href": "www.rediffmail.com",
+            "text": "Rediffmail",
+            "title": "rediffmail",
+            "target": ""
+        }
+    ]
+}
