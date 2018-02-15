@@ -1,16 +1,11 @@
 {
     "tabs": [
         {
-            "href": "www.google.co.in",
-            "text": "Google",
-            "title": "google",
-            "target": ""
-        },
-        {
-            "href": "www.rediffmail.com",
-            "text": "Rediffmail",
-            "title": "rediffmail",
-            "target": ""
+            "href": "",
+            "text": "Track Your Train",
+            "title": "Tracking of the train",
+            "target": "_blank",
+            "type": "track"
         }
     ]
 }

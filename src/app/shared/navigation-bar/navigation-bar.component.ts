@@ -21,11 +21,14 @@ export class NavigationBarComponent implements OnInit {
   fetchData() {
     return this._http.get('src/mocks/navigation-bar.json')
       .map((res: Response) => this.tabs = res.json().tabs)
-      .subscribe();
+      .subscribe(
+        (data) => this.tabs,
+        (error) => console.error(error)        
+      );
   }
   clickHandler(e) {
-    e.preventDefault();
-    console.log(e.target);
+    console.log(e)
+    window.location.href = 'https://enquiry.indianrail.gov.in/ntes/';
   }
 
 }
