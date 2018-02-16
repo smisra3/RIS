@@ -14,13 +14,16 @@ export class NavigationBarComponent implements OnInit {
 
   tabs: Array<Object>
   links: Observable<any>;
+  siteName: String;
 
   constructor(private _componentFetchService: ComponentFetchService) {
     this.tabs = [];
+
   }
   ngOnInit() {
     this.links = this._componentFetchService.getData(Constants.COMPONENTS.navigationBar.url);
     this.links.map(resp => this.tabs = resp.json().tabs).subscribe();
+    
   }
 
   clickHandler(e) {
