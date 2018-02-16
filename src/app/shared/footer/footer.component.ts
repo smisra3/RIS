@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  footerText: String;
 
-  ngOnInit() {
+  constructor(private _http: Http) { 
+    this.footerText = '';
   }
 
+  ngOnInit() {
+    this.fetchData();
+  }
+
+  fetchData() {
+    return this._http.get('src/mocks/footer.json')
+               .map(resp => this.footerText = resp.json().footerText)
+               .subscribe();
+  }
 }
