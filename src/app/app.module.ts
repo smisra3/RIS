@@ -5,19 +5,21 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { NavigationBarComponent } from './shared/navigation-bar/navigation-bar.component';
 import { AppRoutingModule } from "app/app-routing.module";
+import { SharedModule } from "app/shared/shared.module";
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavigationBarComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

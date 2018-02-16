@@ -1,0 +1,3 @@
+<div class="navigation-bar">
+  <a data-type="{{link.type}}" target="{{link.target}}" *ngFor="let link of tabs" href="{{link.href}}" (click)="clickHandler($event)" title="{{link.title}}">{{link.text}}</a>
+</div>
