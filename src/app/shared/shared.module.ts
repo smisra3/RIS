@@ -5,13 +5,14 @@ import { SearchFormComponent } from './components/search-form/search-form.compon
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ComponentFetchService } from './services/component-fetch.service';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [NavigationBarComponent, SearchFormComponent, HeaderComponent, FooterComponent],
-  exports: [NavigationBarComponent, SearchFormComponent, HeaderComponent, FooterComponent],
+  declarations: [NavigationBarComponent, SearchFormComponent, HeaderComponent, FooterComponent, HomeComponent],
+  exports: [NavigationBarComponent, SearchFormComponent, HeaderComponent, FooterComponent, HomeComponent],
   providers: [ComponentFetchService]
 })
 export class SharedModule { }
