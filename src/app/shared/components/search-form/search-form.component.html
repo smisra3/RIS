@@ -1,7 +1,13 @@
 <div class="search-form">
   <form>
-    <input type="text" />
-    <input type="text" />
-    <button class="btn-primary btn-lg btn-group" type="submit">Search</button>
+    <div class="form-group">
+      <label for="trainNumber" class="color-white">Train Number</label>
+      <input id="trainNumber" type="text" class="form-control" placeholder="enter train no." />
+    </div>
+    <div class="form-group">
+      <label for="date"  class="color-white">Date from origin</label>
+      <input id="date" type="text" class="form-control" placeholder="Train start date from origin" />
+    </div>
+    <button class="btn-primary btn-lg btn-group">{{searchText}}</button>
   </form>
 </div>

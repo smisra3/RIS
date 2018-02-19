@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ComponentFetchService } from '../../services/component-fetch.service';
 
 @Component({
   selector: 'app-search-form',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchFormComponent implements OnInit {
 
-  constructor() { }
+  dataStream: Observable<any>;
+  searchText: String;
 
-  ngOnInit() {
+  constructor(private _componentFetchService: ComponentFetchService) { 
+    this.searchText = '';
   }
 
+  ngOnInit() {
+    this.dataStream = this._componentFetchService.getData('src/mocks/search-form.json');
+    this.dataStream.map(resp => this.fillData(resp.json())).subscribe();
+  }
+
+  fillData(response){
+    this.searchText = response.searchLabel;
+  }
 }
