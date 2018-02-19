@@ -1,0 +1,40 @@
+{
+    "tabs": [
+        {
+            "href": "",
+            "text": "Track Your Train",
+            "title": "Live Train Status",
+            "target": "_blank",
+            "type": "track"
+        },
+        {
+            "href": "",
+            "text": "Seat Availibility",
+            "title": "Availibility in Trains",
+            "target": "",
+            "type": "availibility"
+        },
+        {
+            "href": "",
+            "text": "PNR Status",
+            "title": "Passenger Name Record status",
+            "target": "",
+            "type": "pnr"
+        },
+        {
+            "href": "",
+            "text": "Trains Between Stations",
+            "title": "Trains between stations",
+            "target": "",
+            "type": "trains between stn"
+        },
+        {
+            "href": "",
+            "text": "Facts About IR",
+            "title": "Indian Railway(IR) facts",
+            "target": "",
+            "type": "facts"
+        }
+    ],
+    "siteName":"Rail Information System"
+}
