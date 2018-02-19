@@ -2,6 +2,13 @@
     "tabs": [
         {
             "href": "",
+            "text": "Home",
+            "title": "Home",
+            "target": "",
+            "type": "Home"
+        },
+        {
+            "href": "",
             "text": "Track Your Train",
             "title": "Live Train Status",
             "target": "_blank",

@@ -13,10 +13,6 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-  },
-  {
-    path: 'nav',
-    component: NavigationBarComponent
   }, {
     path: 'search',
     component: SearchFormComponent
