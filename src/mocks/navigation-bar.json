@@ -36,5 +36,7 @@
             "type": "facts"
         }
     ],
-    "siteName":"Rail Information System"
+    "siteName":"Rail Information System",
+    "signInLabel": "Sign Up",
+    "logInLabel": "Log In"
 }
