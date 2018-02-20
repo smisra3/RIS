@@ -1,28 +1,28 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-
 import { AppComponent } from './app.component';
-import { NavigationBarComponent } from 'app/shared/components/navigation-bar/navigation-bar.component';
-import { SearchFormComponent } from 'app/shared/components/search-form/search-form.component';
-import { HomeComponent } from 'app/shared/components/home/home.component';
 import { SharedModule } from 'app/shared/shared.module';
+import { HomeModule } from 'app/modules/home/home.module';
+import { ErrorModule } from "app/modules/error/error.module";
 
 const routes: Routes = [
   {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-  }, {
-    path: 'search',
-    component: SearchFormComponent
-  }, {
+  },
+  {
     path: 'home',
-    component: HomeComponent
+    loadChildren: 'app/modules/home.module#HomeModule'
+  },
+  {
+    path: '**',
+    loadChildren: 'app/modules/error.module#ErrorModule'
   }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), SharedModule],
+  imports: [RouterModule.forRoot(routes), SharedModule, HomeModule, ErrorModule],
   exports: [RouterModule],
   providers: []
 })
