@@ -2,27 +2,44 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { SharedModule } from 'app/shared/shared.module';
-import { HomeModule } from 'app/modules/home/home.module';
-import { ErrorModule } from "app/modules/error/error.module";
+import { SharedModule } from './shared/shared.module';
+import { HomeModule } from './modules/home/home.module';
+import { ErrorModule } from "./modules//error/error.module";
+import { ResultModule } from "./modules/result/result.module";
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'home',
-    loadChildren: 'app/modules/home.module#HomeModule'
-  },
-  {
-    path: '**',
-    loadChildren: 'app/modules/error.module#ErrorModule'
-  }];
+    component: AppComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full'
+      },
+      {
+        path: 'home',
+        loadChildren: './modules/home/home.module#HomeModule'
+      },
+      {
+        path: 'result',
+        loadChildren: './modules/result/result.module#ResultModule'
+      },
+      {
+        path: 'error',
+        loadChildren: './modules/error/error.module#ErrorModule'
+      },
+      {
+        path: '**',
+        redirectTo: 'error',
+        pathMatch: 'full'
+      }
+    ]
+  }
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), SharedModule, HomeModule, ErrorModule],
+  imports: [RouterModule.forRoot(routes), SharedModule, HomeModule, ResultModule],
   exports: [RouterModule],
   providers: []
 })

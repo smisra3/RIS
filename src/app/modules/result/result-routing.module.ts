@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ErrorPageComponent } from "app/shared/components/error-page/error-page.component";
+import { ResultBoxComponent } from "app/shared/components/result-box/result-box.component";
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo : 'error',
-    pathMatch : 'full'
+    redirectTo: 'result',
+    pathMatch: 'full'
   },
   {
-    path: 'error',
-    component: ErrorPageComponent
+    path: 'result',
+    component: ResultBoxComponent
   }
 ];
 
@@ -19,4 +19,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ErrorRoutingModule { }
+export class ResultRoutingModule { }

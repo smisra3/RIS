@@ -1,3 +1,7 @@
-.navbar .container-fluid a:first-child {
+li:first-child
+{
+  background-color: #000;
+  a:first-child {
     color: #fff;
+  }
 }
