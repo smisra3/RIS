@@ -10,7 +10,6 @@ import { ResultModule } from "./modules/result/result.module";
 const routes: Routes = [
   {
     path: '',
-    component: AppComponent,
     children: [
       {
         path: '',
@@ -26,13 +25,8 @@ const routes: Routes = [
         loadChildren: './modules/result/result.module#ResultModule'
       },
       {
-        path: 'error',
-        loadChildren: './modules/error/error.module#ErrorModule'
-      },
-      {
         path: '**',
-        redirectTo: 'error',
-        pathMatch: 'full'
+        loadChildren: './modules/error/error.module#ErrorModule'
       }
     ]
   }

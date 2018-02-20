@@ -35,7 +35,7 @@ export class NavigationBarComponent implements OnInit {
   }
 
   clickHandler(e) {
-    window.location.href = Constants.LINKS.liveStatus;
+    // window.location.href = Constants.LINKS.liveStatus;
   }
 
 }

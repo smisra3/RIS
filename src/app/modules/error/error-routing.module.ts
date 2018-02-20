@@ -6,7 +6,7 @@ import { ErrorPageComponent } from "app/shared/components/error-page/error-page.
 const routes: Routes = [
   {
     path: '',
-    redirectTo : 'error',
+    redirectTo : '/error',
     pathMatch : 'full'
   },
   {

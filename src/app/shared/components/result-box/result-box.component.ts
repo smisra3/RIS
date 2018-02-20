@@ -8,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class ResultBoxComponent implements OnInit {
 
   constructor() { }
-  position : 'Train has reached Destination and late by 5 minutes';
+  position : string;
   ngOnInit() {
+    this.position = 'Train has reached Destination and late by 5 minutes';
   }
 
 }

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Http } from '@angular/http';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+
 import { ComponentFetchService } from '../../services/component-fetch.service';
 
 @Component({
@@ -10,9 +13,12 @@ import { ComponentFetchService } from '../../services/component-fetch.service';
 export class SearchFormComponent implements OnInit {
 
   dataStream: Observable<any>;
-  searchText: String;
+  searchText: string;
+  trainNumber: string;
+  dateOfOrigin: string;
+  url: string
 
-  constructor(private _componentFetchService: ComponentFetchService) { 
+  constructor(private _componentFetchService: ComponentFetchService, private _http: Http, private _router: Router) {
     this.searchText = '';
   }
 
@@ -21,7 +27,32 @@ export class SearchFormComponent implements OnInit {
     this.dataStream.map(resp => this.fillData(resp.json())).subscribe();
   }
 
-  fillData(response){
+  fillData(response) {
     this.searchText = response.searchLabel;
+  }
+
+  submitHandler(e) {
+    e.preventDefault();
+    this.insertParams();
+  }
+
+  update(e) {
+    e.target.id === 'trainNumber' ? this.trainNumber = e.target.value : this.dateOfOrigin = e.target.value;
+  }
+
+  insertParams() {
+    if (!this.trainNumber || !this.dateOfOrigin)
+      return false;
+    this.url = 'https://api.railwayapi.com/v2/live/train/' + this.trainNumber + '/date/' + this.dateOfOrigin + '/apikey/yuie3cqj0g'
+    this._http.get(this.url)
+      .map(resp => this.successHandler(resp.json()))
+      .subscribe();
+
+  }
+
+  successHandler(response) {
+    if (response.response_code === 200) {
+      this._router.navigate(['/result']);
+    }
   }
 }
