@@ -1,4 +1,4 @@
 <p class="centered">
-  <app-search-form></app-search-form>
-  <app-result-box></app-result-box>
+  <app-search-form (result)="ajaxSuccess($event)"></app-search-form>
+  <app-result-box [data]="data"></app-result-box>
 </p>

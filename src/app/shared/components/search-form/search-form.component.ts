@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
@@ -19,7 +19,7 @@ export class SearchFormComponent implements OnInit {
   trainNumber: string;
   dateOfOrigin: string;
   url: string
-
+  @Output() result = new EventEmitter<any>();
   constructor(private _componentFetchService: ComponentFetchService, private _http: Http, private _router: Router, private _shareDataService: ShareDataService) {
     this.searchText = '';
   }
@@ -55,7 +55,8 @@ export class SearchFormComponent implements OnInit {
   successHandler(response) {
     console.log(response)
     if (response.response_code === 200) {
-      this._shareDataService.data = response.position;
+      this.result.emit(response.position);
+      // this._shareDataService.data = response.position;
       this._router.navigate(['/result']);
     }
   }
