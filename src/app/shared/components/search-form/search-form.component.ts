@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
 import { ComponentFetchService } from '../../services/component-fetch.service';
+import { ShareDataService } from '../../services/share-data.service';
+
 
 @Component({
   selector: 'app-search-form',
@@ -18,7 +20,7 @@ export class SearchFormComponent implements OnInit {
   dateOfOrigin: string;
   url: string
 
-  constructor(private _componentFetchService: ComponentFetchService, private _http: Http, private _router: Router) {
+  constructor(private _componentFetchService: ComponentFetchService, private _http: Http, private _router: Router, private _shareDataService: ShareDataService) {
     this.searchText = '';
   }
 
@@ -43,15 +45,17 @@ export class SearchFormComponent implements OnInit {
   insertParams() {
     if (!this.trainNumber || !this.dateOfOrigin)
       return false;
-    this.url = 'https://api.railwayapi.com/v2/live/train/' + this.trainNumber + '/date/' + this.dateOfOrigin + '/apikey/yuie3cqj0g'
+    // this.url = 'https://api.railwayapi.com/v2/live/train/' + this.trainNumber + '/date/' + this.dateOfOrigin + '/apikey/yuie3cqj0g';
+    this.url = 'src/mocks/liveStatus.json';
     this._http.get(this.url)
       .map(resp => this.successHandler(resp.json()))
       .subscribe();
-
   }
 
   successHandler(response) {
+    console.log(response)
     if (response.response_code === 200) {
+      this._shareDataService.data = response.position;
       this._router.navigate(['/result']);
     }
   }

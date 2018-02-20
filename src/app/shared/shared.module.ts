@@ -6,6 +6,7 @@ import { SearchFormComponent } from './components/search-form/search-form.compon
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ComponentFetchService } from './services/component-fetch.service';
+import { ShareDataService } from './services/share-data.service'; 
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { ResultBoxComponent } from './components/result-box/result-box.component';
 
@@ -15,6 +16,6 @@ import { ResultBoxComponent } from './components/result-box/result-box.component
   ],
   declarations: [NavigationBarComponent, SearchFormComponent, HeaderComponent, FooterComponent, ErrorPageComponent, ResultBoxComponent],
   exports: [HeaderComponent, FooterComponent, NavigationBarComponent, SearchFormComponent, ResultBoxComponent],
-  providers: [ComponentFetchService]
+  providers: [ComponentFetchService, ShareDataService]
 })
 export class SharedModule { }

@@ -1,0 +1,190 @@
+{
+    "train": {
+        "days": [
+            {
+                "code": "MON",
+                "runs": "Y"
+            },
+            {
+                "code": "TUE",
+                "runs": "Y"
+            },
+            {
+                "code": "WED",
+                "runs": "Y"
+            },
+            {
+                "code": "THU",
+                "runs": "Y"
+            },
+            {
+                "code": "FRI",
+                "runs": "Y"
+            },
+            {
+                "code": "SAT",
+                "runs": "Y"
+            },
+            {
+                "code": "SUN",
+                "runs": "Y"
+            }
+        ],
+        "classes": [
+            {
+                "code": "FC",
+                "name": "FIRST CLASS",
+                "available": "N"
+            },
+            {
+                "code": "2S",
+                "name": "SECOND SEATING",
+                "available": "N"
+            },
+            {
+                "code": "3A",
+                "name": "THIRD AC",
+                "available": "Y"
+            },
+            {
+                "code": "2A",
+                "name": "SECOND AC",
+                "available": "Y"
+            },
+            {
+                "code": "CC",
+                "name": "AC CHAIR CAR",
+                "available": "N"
+            },
+            {
+                "code": "1A",
+                "name": "FIRST AC",
+                "available": "Y"
+            },
+            {
+                "code": "3E",
+                "name": "3rd AC ECONOMY",
+                "available": "N"
+            },
+            {
+                "code": "SL",
+                "name": "SLEEPER CLASS",
+                "available": "N"
+            }
+        ],
+        "name": "LKO-NDLS AC SUPFAST EXP",
+        "number": "12429"
+    },
+    "debit": 2,
+    "route": [
+        {
+            "actarr": "00:00",
+            "station": {
+                "code": "LKO",
+                "lat": 26.8381,
+                "name": "LUCKNOW",
+                "lng": 80.9346001
+            },
+            "has_arrived": true,
+            "actarr_date": "19 Feb 2018",
+            "distance": 0,
+            "latemin": 0,
+            "scharr": "Source",
+            "scharr_date": "19 Feb 2018",
+            "schdep": "23:30",
+            "actdep": "23:30",
+            "has_departed": true,
+            "status": "0 mins late",
+            "day": 0
+        },
+        {
+            "actarr": "02:49",
+            "station": {
+                "code": "BE",
+                "lat": 28.3523609,
+                "name": "BAREILLY",
+                "lng": 79.4096542
+            },
+            "has_arrived": true,
+            "actarr_date": "20 Feb 2018",
+            "distance": 235,
+            "latemin": 7,
+            "scharr": "02:42",
+            "scharr_date": "20 Feb 2018",
+            "schdep": "02:45",
+            "actdep": "02:52",
+            "has_departed": true,
+            "status": "7 mins late",
+            "day": 1
+        },
+        {
+            "actarr": "04:20",
+            "station": {
+                "code": "MB",
+                "lat": 28.8170328,
+                "name": "MORADABAD",
+                "lng": 78.7777028569385
+            },
+            "has_arrived": true,
+            "actarr_date": "20 Feb 2018",
+            "distance": 325,
+            "latemin": 0,
+            "scharr": "04:20",
+            "scharr_date": "20 Feb 2018",
+            "schdep": "04:28",
+            "actdep": "04:28",
+            "has_departed": true,
+            "status": "0 mins late",
+            "day": 1
+        },
+        {
+            "actarr": "06:47",
+            "station": {
+                "code": "GZB",
+                "lat": 28.6711527,
+                "name": "GHAZIABAD",
+                "lng": 77.4120356
+            },
+            "has_arrived": true,
+            "actarr_date": "20 Feb 2018",
+            "distance": 466,
+            "latemin": 9,
+            "scharr": "06:38",
+            "scharr_date": "20 Feb 2018",
+            "schdep": "06:40",
+            "actdep": "06:49",
+            "has_departed": true,
+            "status": "9 mins late",
+            "day": 1
+        },
+        {
+            "actarr": "07:40",
+            "station": {
+                "code": "NDLS",
+                "lat": 28.6141793,
+                "name": "NEW DELHI",
+                "lng": 77.2022662
+            },
+            "has_arrived": true,
+            "actarr_date": "20 Feb 2018",
+            "distance": 492,
+            "latemin": 15,
+            "scharr": "07:25",
+            "scharr_date": "20 Feb 2018",
+            "schdep": "Destination",
+            "actdep": "00:00",
+            "has_departed": false,
+            "status": "15 mins late",
+            "day": 1
+        }
+    ],
+    "current_station": {
+        "code": "NDLS",
+        "lat": 28.6141793,
+        "name": "NEW DELHI",
+        "lng": 77.2022662
+    },
+    "start_date": "19 Feb 2018",
+    "position": "Train has reached Destination and late by 5 minutes.",
+    "response_code": 200
+}
