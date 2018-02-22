@@ -47,12 +47,15 @@ export class NavigationBarComponent implements OnInit {
         break;
       }
       case 'pnr-status': {
+        this._router.navigate(['/pnr-status']);
         break;
       }
       case 'between': {
+        this._router.navigate(['/between']);
         break;
       }
       case 'facts': {
+        this._router.navigate(['/facts']);
         break;
       }
       default: break;

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MainComponent } from "app/modules/trains-between-stations/main/main.component";
 
+import { MainComponent } from "app/modules/facts/main/main.component";
 
 const routes: Routes = [
   {
@@ -14,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TrainsBetweenStationsRoutingModule { }
+export class FactsRoutingModule { }

@@ -29,6 +29,18 @@ const routes: Routes = [
         loadChildren: './modules/seat-availability/seat-availability.module#SeatAvailabilityModule'
       },
       {
+        path: 'pnr-status',
+        loadChildren: './modules/pnr-status/pnr-status.module#PnrStatusModule'
+      },
+      {
+       path: 'between',
+       loadChildren: './modules/trains-between-stations/trains-between-stations.module#TrainsBetweenStationsModule' 
+      },
+      {
+        path: 'facts',
+        loadChildren: './modules/facts/facts.module#FactsModule'
+      },
+      {
         path: '**',
         loadChildren: './modules/error/error.module#ErrorModule'
       }
