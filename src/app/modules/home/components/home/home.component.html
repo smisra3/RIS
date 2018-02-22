@@ -1,4 +1,8 @@
-<p class="centered">
-  <app-search-form (result)="ajaxSuccess($event)"></app-search-form>
-  <app-result-box [data]="data"></app-result-box>
-</p>
+<div class="centered">
+  <div>
+    <app-search-form (result) = "ajaxSuccess($event)"></app-search-form>
+  </div>
+  <div>
+    <app-result-box [data] = "data"></app-result-box>
+  </div>
+</div>
