@@ -5,19 +5,18 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/cor
   templateUrl: './result-box.component.html',
   styleUrls: ['./result-box.component.scss']
 })
-export class ResultBoxComponent implements OnChanges {
+export class ResultBoxComponent implements OnInit, OnChanges {
 
-  constructor() { 
-    this.show = false;
-  }
-  position : string;
+  constructor() {}
   show: boolean;
-  @Input() data: any;       
+  @Input() data: any;  
+  position: any;     
 
-  ngOnChanges(changes: SimpleChanges) {
-    // this.position = 'Train has reached Destination and late by 5 minutes';
-    console.log(changes)
+  ngOnInit() {}
 
+  ngOnChanges() {
+    this.position = this.data;
+    this.show = this.position ? true: false;
   }
 
 }

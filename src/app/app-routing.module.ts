@@ -25,6 +25,10 @@ const routes: Routes = [
         loadChildren: './modules/result/result.module#ResultModule'
       },
       {
+        path: 'seat-availability',
+        loadChildren: './modules/seat-availability/seat-availability.module#SeatAvailabilityModule'
+      },
+      {
         path: '**',
         loadChildren: './modules/error/error.module#ErrorModule'
       }

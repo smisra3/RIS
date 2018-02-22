@@ -1,11 +1,11 @@
 <div class="search-form">
   <form>
     <div class="form-group">
-      <label for="trainNumber" class="color-white">Train Number</label>
+      <label for="trainNumber" class="t-color-white">Train Number</label>
       <input id="trainNumber" type="text" value="" (change)="update($event)" class="form-control" placeholder="enter train no." />
     </div>
     <div class="form-group">
-      <label for="date"  class="color-white">Date from origin</label>
+      <label for="date"  class="t-color-white">Date from origin</label>
       <input id="date" type="text" class="form-control" (change)="update($event)" placeholder="Train start date from origin" />
     </div>
     <button type="button" class="btn-primary btn-lg btn-group" (click)="submitHandler($event)">{{searchText}}</button>

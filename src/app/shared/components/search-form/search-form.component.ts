@@ -53,11 +53,9 @@ export class SearchFormComponent implements OnInit {
   }
 
   successHandler(response) {
-    console.log(response)
     if (response.response_code === 200) {
+      // this._router.navigate(['/result']);
       this.result.emit(response.position);
-      // this._shareDataService.data = response.position;
-      this._router.navigate(['/result']);
     }
   }
 }
