@@ -5,28 +5,28 @@
             "text": "Track Your Train",
             "title": "Live Train Status",
             "target": "",
-            "type": "track"
+            "type": "live"
         },
         {
             "href": "",
             "text": "Seat Availibility",
             "title": "Availibility in Trains",
             "target": "",
-            "type": "availibility"
+            "type": "check-seat"
         },
         {
             "href": "",
             "text": "PNR Status",
             "title": "Passenger Name Record status",
             "target": "",
-            "type": "pnr"
+            "type": "pnr-status"
         },
         {
             "href": "",
             "text": "Trains Between Stations",
             "title": "Trains between stations",
             "target": "",
-            "type": "trains between stn"
+            "type": "between"
         },
         {
             "href": "",

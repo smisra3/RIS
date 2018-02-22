@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 import 'rxjs/add/operator/map';
 
 import { ComponentFetchService } from '../../services/component-fetch.service';
@@ -18,7 +19,7 @@ export class NavigationBarComponent implements OnInit {
   signInText: String;
   logInText: String;
 
-  constructor(private _componentFetchService: ComponentFetchService) {
+  constructor(private _componentFetchService: ComponentFetchService, private _router: Router) {
     this.tabs = [];
     this.signInText = '';
     this.logInText = '';
@@ -28,14 +29,34 @@ export class NavigationBarComponent implements OnInit {
     this.links.map(resp => this.fillData(resp.json())).subscribe();
   }
 
-  fillData(response){
+  fillData(response) {
     this.tabs = response.tabs;
     this.signInText = response.signInLabel;
     this.logInText = response.logInLabel;
   }
 
   clickHandler(e) {
-    // window.location.href = Constants.LINKS.liveStatus;
+    e.preventDefault();
+    switch (e.target.dataset.type) {
+      case 'live': {
+        this._router.navigate(['/home']);
+        break;
+      }
+      case 'check-seat': {
+        this._router.navigate(['/seat-availability']);
+        break;
+      }
+      case 'pnr-status': {
+        break;
+      }
+      case 'between': {
+        break;
+      }
+      case 'facts': {
+        break;
+      }
+      default: break;
+    }
   }
 
 }

@@ -5,11 +5,6 @@ import { HomeComponent } from "app/modules/seat-availability/components/home/hom
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'seat-availability',
-    pathMatch: 'full'
-  },
-  {
-    path: 'seat-availability',
     component: HomeComponent
   }
 ];
