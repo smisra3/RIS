@@ -9,7 +9,7 @@
       <input id="date" type="text" class="form-control" (change)="update($event)" placeholder="Train start date from origin" />
     </div>
     <!--Conditional form part begins for trains between stations-->
-    <div *ngIf="type">
+    <div *ngIf="type=='between'">
       <div class="form-group">
         <label for="date"  class="t-color-white">Source</label>
         <input id="date" type="text" class="form-control" (change)="update($event)" placeholder="Enter Source station" />

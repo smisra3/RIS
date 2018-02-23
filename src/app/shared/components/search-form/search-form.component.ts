@@ -19,7 +19,7 @@ export class SearchFormComponent implements OnInit {
   trainNumber: string;
   dateOfOrigin: string;
   url: string;
-  type: boolean;
+  type: string;
 
   @Output() result = new EventEmitter<any>();
 
@@ -29,12 +29,12 @@ export class SearchFormComponent implements OnInit {
     private _shareDataService: ShareDataService) {
 
     this.searchText = '';
-    this.type = false;
+    this.type = '';
   }
 
   ngOnInit() {
     this.dataStream = this._componentFetchService.getData('src/mocks/search-form.json');
-    this.type = this._shareDataService.getData() === 'between' ? true : false;
+    this.type = this._shareDataService.getData();
     this.dataStream.map(resp => this.fillData(resp.json())).subscribe();
   }
 
