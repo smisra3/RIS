@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { SeatAvailabilityRoutingModule } from './seat-availability-routing.module';
 import { HomeComponent } from './components/home/home.component';
+import { SharedModule } from '../../shared/shared.module'
 
 @NgModule({
   imports: [
     CommonModule,
-    SeatAvailabilityRoutingModule
+    SeatAvailabilityRoutingModule,
+    SharedModule
   ],
   declarations: [HomeComponent]
 })

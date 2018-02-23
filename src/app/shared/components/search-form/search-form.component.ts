@@ -18,14 +18,23 @@ export class SearchFormComponent implements OnInit {
   searchText: string;
   trainNumber: string;
   dateOfOrigin: string;
-  url: string
+  url: string;
+  type: boolean;
+
   @Output() result = new EventEmitter<any>();
-  constructor(private _componentFetchService: ComponentFetchService, private _http: Http, private _router: Router, private _shareDataService: ShareDataService) {
+
+  constructor(private _componentFetchService: ComponentFetchService,
+    private _http: Http,
+    private _router: Router,
+    private _shareDataService: ShareDataService) {
+
     this.searchText = '';
+    this.type = false;
   }
 
   ngOnInit() {
     this.dataStream = this._componentFetchService.getData('src/mocks/search-form.json');
+    this.type = this._shareDataService.getData() === 'between' ? true : false;
     this.dataStream.map(resp => this.fillData(resp.json())).subscribe();
   }
 

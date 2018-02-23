@@ -1,5 +1,5 @@
 <div class="search-form">
-  <form>
+  <form action="#">
     <div class="form-group">
       <label for="trainNumber" class="t-color-white">Train Number</label>
       <input id="trainNumber" type="text" value="" (change)="update($event)" class="form-control" placeholder="enter train no." />
@@ -8,6 +8,18 @@
       <label for="date"  class="t-color-white">Date from origin</label>
       <input id="date" type="text" class="form-control" (change)="update($event)" placeholder="Train start date from origin" />
     </div>
+    <!--Conditional form part begins for trains between stations-->
+    <div *ngIf="type">
+      <div class="form-group">
+        <label for="date"  class="t-color-white">Source</label>
+        <input id="date" type="text" class="form-control" (change)="update($event)" placeholder="Enter Source station" />
+      </div>
+      <div class="form-group">
+        <label for="date"  class="t-color-white">Destination</label>
+        <input id="date" type="text" class="form-control" (change)="update($event)" placeholder="Enter Destination station" />
+      </div>
+    </div>
+    <!--Conditional form part ends-->
     <button type="button" class="btn-primary btn-lg btn-group" (click)="submitHandler($event)">{{searchText}}</button>
   </form>
 </div>

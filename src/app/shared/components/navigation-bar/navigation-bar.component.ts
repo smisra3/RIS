@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 
 import { ComponentFetchService } from '../../services/component-fetch.service';
 import { Constants } from '../../../../constants/config';
+import { ShareDataService } from '../../services/share-data.service';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -19,7 +20,9 @@ export class NavigationBarComponent implements OnInit {
   signInText: String;
   logInText: String;
 
-  constructor(private _componentFetchService: ComponentFetchService, private _router: Router) {
+  constructor(private _componentFetchService: ComponentFetchService,
+    private _router: Router,
+    private _sharedDataService: ShareDataService) {
     this.tabs = [];
     this.signInText = '';
     this.logInText = '';
@@ -37,6 +40,7 @@ export class NavigationBarComponent implements OnInit {
 
   clickHandler(e) {
     e.preventDefault();
+    this._sharedDataService.setData('type', e.target.dataset.type);
     switch (e.target.dataset.type) {
       case 'live': {
         this._router.navigate(['/home']);

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges, Input } from '@angular/core';
+
+import { ShareDataService } from '../../../shared/services/share-data.service'
 
 @Component({
   selector: 'app-main',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  type:any;
+
+  constructor(private _sharedDataService: ShareDataService) {
+    this.type = '';
+   }
 
   ngOnInit() {
+    this.type = this._sharedDataService.getData();
   }
-
 }
