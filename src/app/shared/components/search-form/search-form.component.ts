@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 
 import { ComponentFetchService } from '../../services/component-fetch.service';
 import { ShareDataService } from '../../services/share-data.service';
+import { DataSharingService } from '../../../core/services/data-sharing.service';
 
 
 @Component({
@@ -20,16 +21,19 @@ export class SearchFormComponent implements OnInit {
   dateOfOrigin: string;
   url: string;
   type: string;
+  initLoader: boolean;
 
   @Output() result = new EventEmitter<any>();
 
   constructor(private _componentFetchService: ComponentFetchService,
     private _http: Http,
     private _router: Router,
-    private _shareDataService: ShareDataService) {
+    private _shareDataService: ShareDataService,
+    private _dataSharingService: DataSharingService) {
 
     this.searchText = '';
     this.type = '';
+    this.initLoader = false;
   }
 
   ngOnInit() {
@@ -44,6 +48,8 @@ export class SearchFormComponent implements OnInit {
 
   submitHandler(e) {
     e.preventDefault();
+    this.initLoader = true;
+    this._dataSharingService.setData(this.initLoader);
     this.insertParams();
   }
 
@@ -64,6 +70,8 @@ export class SearchFormComponent implements OnInit {
   successHandler(response) {
     if (response.response_code === 200) {
       // this._router.navigate(['/result']);
+      this.initLoader = false;
+      this._dataSharingService.setData(this.initLoader);
       this.result.emit(response.position);
     }
   }

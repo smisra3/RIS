@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from "app/app-routing.module";
 import { SharedModule } from "app/shared/shared.module";
 import { HttpClientModule } from '@angular/common/http';
+import { DataSharingService } from "app/core/services/data-sharing.service";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     SharedModule
   ],
-  providers: [],
+  providers: [DataSharingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
