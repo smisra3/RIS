@@ -1,15 +1,18 @@
 <div class="search-form">
   <form action="#">
-    <div class="form-group">
-      <label for="trainNumber" class="t-color-white">Train Number</label>
-      <input id="trainNumber" type="text" value="" (change)="update($event)" class="form-control" placeholder="enter train no." />
-    </div>
-    <div class="form-group">
-      <label for="date"  class="t-color-white">Date from origin</label>
-      <input id="date" type="text" class="form-control" (change)="update($event)" placeholder="Train start date from origin" />
+    <!--Conditonal part for tracking the train begins-->
+    <div *ngIf="type == 'live'">
+      <div class="form-group">
+        <label for="trainNumber" class="t-color-white">Train Number</label>
+        <input id="trainNumber" type="text" value="" (change)="update($event)" class="form-control" placeholder="enter train no." />
+      </div>
+      <div class="form-group">
+        <label for="date"  class="t-color-white">Date from origin</label>
+        <input id="date" type="text" class="form-control" (change)="update($event)" placeholder="Train start date from origin" />
+      </div>
     </div>
     <!--Conditional form part begins for trains between stations-->
-    <div *ngIf="type=='between'">
+    <div *ngIf="type =='between'">
       <div class="form-group">
         <label for="date"  class="t-color-white">Source</label>
         <input id="date" type="text" class="form-control" (change)="update($event)" placeholder="Enter Source station" />
@@ -18,8 +21,48 @@
         <label for="date"  class="t-color-white">Destination</label>
         <input id="date" type="text" class="form-control" (change)="update($event)" placeholder="Enter Destination station" />
       </div>
+      <div class="form-group">
+        <label for="date"  class="t-color-white">Date from origin</label>
+        <input id="date" type="text" class="form-control" (change)="update($event)" placeholder="Train start date from origin" />
+      </div>
     </div>
     <!--Conditional form part ends-->
+    <!--Conditional part for PNR status begins-->
+    <div *ngIf="type == 'pnr-status'">
+      <div class="form-group">
+        <label for="pnr" class="t-color-white">Enter PNR</label>
+        <input type="text" id="pnr" class="form-control" placeholder="enter PNR number"/>
+      </div>
+    </div>
+    <!--Conditional part ends-->
+    <!--Conditional part for seat availability begins.-->
+    <div *ngIf="type == 'check-seat'">
+      <div class="form-group">
+        <label for="trainNumber" class="t-color-white">Enter train Number</label>
+        <input type="text" placeholder="enter train number" id="trainNumber" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="source" class="t-color-white">Source</label>
+        <input type="text" id="source" placeholder="enter source" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="destination" aria-placeholder="enter destination" class="t-color-white">Destination</label>
+        <input type="text" placeholder="enter destination" id="destination" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="date" class="t-color-white">Date</label>
+        <input type="text" placeholder="enter date of your journey" id="date" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="class" class="t-color-white">Class of Travel</label>
+        <input type="text" id="class" placeholder="enter class of travel" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="quota" class="t-color-white">Quota</label>
+        <input type="text" id="quota" placeholder="enter quota" class="form-control">
+      </div>
+    </div>
+    <!--Conditional part ends-->
     <button type="button" class="btn-primary btn-lg btn-group" (click)="submitHandler($event)">{{searchText}}</button>
   </form>
 </div>
