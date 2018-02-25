@@ -14,7 +14,6 @@ export class DataSharingService {
 
   setData(data) {
     this.myObservable.next(data);  
-    this.observeData = data;
   }
 
 }
