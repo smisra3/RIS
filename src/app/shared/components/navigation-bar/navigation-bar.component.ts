@@ -30,6 +30,7 @@ export class NavigationBarComponent implements OnInit {
   ngOnInit() {
     this.links = this._componentFetchService.getData(Constants.COMPONENTS.navigationBar.url);
     this.links.map(resp => this.fillData(resp.json())).subscribe();
+    this._sharedDataService.setData('type', 'live');
   }
 
   fillData(response) {

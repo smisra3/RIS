@@ -18,6 +18,7 @@ export class SearchFormComponent implements OnInit {
   dataStream: Observable<any>;
   searchText: string;
   trainNumber: string;
+  pnr: string;
   dateOfOrigin: string;
   url: string;
   type: string;
@@ -25,7 +26,8 @@ export class SearchFormComponent implements OnInit {
 
   @Output() result = new EventEmitter<any>();
 
-  constructor(private _componentFetchService: ComponentFetchService,
+  constructor(
+    private _componentFetchService: ComponentFetchService,
     private _http: Http,
     private _router: Router,
     private _shareDataService: ShareDataService,
@@ -50,18 +52,39 @@ export class SearchFormComponent implements OnInit {
     e.preventDefault();
     this.initLoader = true;
     this._dataSharingService.setData(this.initLoader);
-    this.insertParams();
+    this.constructURL();
   }
 
   update(e) {
-    e.target.id === 'trainNumber' ? this.trainNumber = e.target.value : this.dateOfOrigin = e.target.value;
+    switch (e.target.id) {
+      case 'trainNumber': {
+        this.trainNumber = e.target.value;
+        break;
+      }
+      case 'dateOfOrigin': {
+        this.dateOfOrigin = e.target.value;
+        break;
+      }
+      case 'pnr': {
+        this.pnr = e.target.value;
+        break;
+      }
+    }
   }
 
-  insertParams() {
-    if (!this.trainNumber || !this.dateOfOrigin)
-      return false;
-    // this.url = 'https://api.railwayapi.com/v2/live/train/' + this.trainNumber + '/date/' + this.dateOfOrigin + '/apikey/yuie3cqj0g';
-    this.url = 'src/mocks/liveStatus.json';
+  constructURL() {
+    switch (this.type) {
+      case 'live': {
+        // this.url = 'https://api.railwayapi.com/v2/live/train/' + this.trainNumber + '/date/' + this.dateOfOrigin + '/apikey/yuie3cqj0g';
+        this.url = 'src/mocks/liveStatus.json';
+        break;
+      }
+      case 'pnr-status': {
+        // this.url = 'https://api.railwayapi.com/v2/pnr-status/pnr/' + this.pnr + '/apikey/yuie3cqj0g';
+        break;
+      }
+    }
+
     this._http.get(this.url)
       .map(resp => this.successHandler(resp.json()))
       .subscribe();
@@ -69,7 +92,6 @@ export class SearchFormComponent implements OnInit {
 
   successHandler(response) {
     if (response.response_code === 200) {
-      // this._router.navigate(['/result']);
       this.initLoader = false;
       this._dataSharingService.setData(this.initLoader);
       this.result.emit(response.position);
