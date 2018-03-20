@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
+  data: any;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  ajaxSuccess(e) {
+    this.data = e;
+  }
 }

@@ -7,16 +7,29 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/cor
 })
 export class ResultBoxComponent implements OnInit, OnChanges {
 
-  constructor() {}
-  show: boolean;
-  @Input() data: any;  
-  position: any;     
+  constructor() { }
+  
+  showLiveStatus: boolean;
+  position: any;
+  showPNRResult: boolean;
 
-  ngOnInit() {}
+  @Input() data: any;
+
+  ngOnInit() { }
 
   ngOnChanges() {
-    this.position = this.data;
-    this.show = this.position ? true: false;
+    if (this.data) {
+      switch (this.data.type) {
+        case 'live': {
+          this.position = this.data.position;
+          this.showLiveStatus = this.position ? true : false;
+          break;
+        }
+        case 'pnr-status': {
+          this.showPNRResult = true;
+          break;
+        }
+      }
+    }
   }
-
 }

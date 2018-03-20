@@ -81,10 +81,10 @@ export class SearchFormComponent implements OnInit {
       }
       case 'pnr-status': {
         // this.url = 'https://api.railwayapi.com/v2/pnr-status/pnr/' + this.pnr + '/apikey/yuie3cqj0g';
+        this.url = 'src/mocks/liveStatus.json';
         break;
       }
     }
-
     this._http.get(this.url)
       .map(resp => this.successHandler(resp.json()))
       .subscribe();
@@ -94,7 +94,8 @@ export class SearchFormComponent implements OnInit {
     if (response.response_code === 200) {
       this.initLoader = false;
       this._dataSharingService.setData(this.initLoader);
-      this.result.emit(response.position);
+      response.type = this.type;
+      this.result.emit(response);
     }
   }
 }
