@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import 'rxjs/add/operator/map';
 
 import { ComponentFetchService } from '../../services/component-fetch.service';
@@ -30,7 +30,13 @@ export class NavigationBarComponent implements OnInit {
   ngOnInit() {
     this.links = this._componentFetchService.getData(Constants.COMPONENTS.navigationBar.url);
     this.links.map(resp => this.fillData(resp.json())).subscribe();
-    this._sharedDataService.setData('type', 'live');
+    this._router.events.subscribe((e) => {
+      if (e instanceof NavigationEnd) {
+        e.url = e.url.replace('/', '');
+        e.url = e.url === 'home' ? 'live' : (e.url == 'seat-availability' ? 'check-seat' : e.url);
+        this._sharedDataService.setData('type', e.url);
+      }
+    });
   }
 
   fillData(response) {
